@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="{CHARSET}">
+		<title></title>
+		<style>
+			#div1{
+				width: 100px;
+				height: 50px;
+				background: red;
+			}
+			.scroll{
+				width: 200px;
+				height: 300px;
+				background: wheat;
+				font-size: 25px;
+				word-wrap: break-word;
+				overflow-y: scroll;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<input type="text" id='text1'/><span>+</span><input type="text" id='text2'/><span>=</span><strong id='result'></strong>
+
+		<div id='div1'></div>
+		<div id="box">
+			<ul>
+				<li>
+					<p>
+						<a>
+							<span>
+								<small>jslfjsdfjsdkl</small>
+							</span>
+						</a>
+					</p>
+				</li>
+			</ul>
+		</div>
+		<div class="scroll"><p>sdfdsfsdfsdfdsfd fdsfeewtewgfdgdsgsdgsdgrwehredfhdfhsdgfdgdsdsgsdsdgdsgdsgdgrgrehdfhfdgfdgryyuoretowe[uosdfjdslkfjsdlfjskdfhdsjfowefjldskfdfsdferwefdsfdsfsdfewrewre]</p></div>
+		<script>
+			var a='sss';
+			var b=null;
+			var c={}
+			var f=function(){alert(1)}
+			console.log(typeof f);
+			var div1=document.getElementById('div1');
+			console.log(typeof div1);
+			
+			var txt1=document.getElementById('text1');
+			var txt2=document.getElementById('text2');
+			var result=document.getElementById('result');
+			
+			div1.onclick=function(){
+				var val1=txt1.value,val2=txt2.value;
+				console.log(typeof val1)
+				if(isNaN(val1) || isNaN(val2)){
+					alert('请输入数字')
+				}else{
+					result.innerHTML=Number(val1)+Number(val2);
+				}
+				
+			}
+			
+			console.log(Number(c))
+			var un=undefined;
+			var nu=null;
+			var obj={};
+			var b1=true;
+			var b2=false;
+			
+			var str='ksadff';
+			var str1='';
+			var str2=' ';
+			var str3='213';
+			var str4='00012';
+			var str5='d52';
+			console.log(Number(un))  //NaN
+			console.log(Number(nu))  //0
+			console.log(Number(obj))  //NaN
+			console.log(Number(b1))  //1
+			console.log(Number(str))  //NaN
+			
+			console.log(Number(str1))  //0
+			console.log(Number(str2))  //0
+			console.log(Number(str3))  //213
+			console.log(Number(str4))  //12
+			console.log(Number(str5))  //NaN
+			
+			var arr1=[1,2];
+			var arr2=[];
+			var str6='123sdf';
+			var str7='526.33klkll';
+			
+			var str8='px233';
+			var str9='684.74dfsdf56'
+			console.log(Number(arr1))  //NaN
+			console.log(Number(arr2))  //0
+			console.log(parseInt(str6))  //123
+			console.log(parseFloat(str6))  //123
+			
+			console.log(parseFloat(str7))  //526.33
+			console.log(parseInt(str7))  //526
+			console.log(parseInt(str8))  //NaN
+			console.log(parseFloat(str9))  //684.74
+			
+			var n1='12px';
+			var n2='45';
+			console.log(isNaN(n1))
+			console.log(isNaN(n2))
+			
+			var i=0;
+			while(i<10){
+				console.log(i);
+				i++;
+			}
+			var box=document.getElementById('box');
+			while(box.children.length){
+				box=box.children[0]
+			}
+			console.log(box);
+			var str10='bldjfdsofids';
+			console.log(str10.charAt(6)) //s
+			console.log(str10.charAt())   //b;
+			
+			var arr1=['green','red','yellow','blue'];
+			//console.log(arr1.slice(2,3))
+			console.log(arr1.splice(2,1));
+			console.log(arr1)
+			
+			var METADATA=(function(global,factory){
+				return factory.call(global)
+			})(this,function(){
+				var __META__={
+					init:function(){
+						alert(2)
+					}
+					
+				};
+				
+				var __MODULE__={
+					'detail':{
+						data:null,
+						view:null,
+						render:function(){
+							console.log('detail module')
+						}
+					},
+					'invest':{
+						data:null,
+						view:null,
+						render:function(){
+							console.log('invest module')
+						}
+					},
+					'list':{
+						data:null,
+						view:null,
+						render:function(){
+							console.log('list module')
+						}
+					}
+				}
+				
+				
+				return __META__;
+				
+				
+			});
+			console.log(METADATA)
+			METADATA.init();
+			window.yx={
+				g:function(x){
+					return document.getElementById(x)
+				}
+			}
+			console.log(yx.g)
+		</script>
+	</body>
+</html>
